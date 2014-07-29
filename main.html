@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="middleSection">
+    	3D viewer goes here
+    </div>
+{% endblock %} 
+
+{% block pageTitle %}    
+    <h2> Garments</h2>
+{% endblock %}
+
+{% block leftSidebar %}
+<div class="leftSidebar">
+	<div class="garment">
+		<h5 class="label">Shirt</h5>
+		<a class="thumbnail" id="shirt"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
+		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
+	</div>
+
+	<div class="garment">
+		<h5 class="label">Pants</h5>
+		<a class="thumbnail" id="pants"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
+		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
+	</div>
+
+	<div class="garment">
+		<h5 class="label">Dress</h5>
+		<a class="thumbnail" id="dress1"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
+		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
+	</div>
+
+	<div class="garment">
+		<h5 class="label">Gown</h5>
+		<a class="thumbnail" id="dress2"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
+		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
+	</div>
+
+	<div class="garment">
+		<h5 class="label">Coat</h5>
+		<a class="thumbnail" id="coat"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
+		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
+	</div>
+
+
+</div>
+{% endblock %}
+
+{% block rightSidebar %}
+<div class="rightSidebar">
+	<div class="slider"></div>
+	<h5 class="label">Length</h5>
+
+	<div class="slider"></div>
+	<h5 class="label">Sleeves</h5>
+
+	<div class="slider"></div>
+	<h5 class="label">Boxiness</h5>
+
+	<div class="slider"></div>
+	<h5 class="label">Neckline</h5>
+
+	<div class="slider"></div>
+	<h5 class="label">Tightness</h5>
+
+</div>
+{% endblock %}
+
+
+{% block javascript %} 
+
+<script>
+$(".inactive-garment").click(function(){
+	$(this).attr("src", "http://continuumfashion.com/temp/rose/checkmark.svg");
+	$(this).attr("class", "active-garment");
+}); 
+
+$(".active-garment").click(function(){
+	$(this).attr("src", "http://continuumfashion.com/temp/rose/xmark.svg");
+	$(this).attr("class", "inactive-garment");
+});
+
+$(function() {
+    $( ".slider" ).slider();
+  });
+</script>
+{% endblock %} 

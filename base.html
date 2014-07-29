@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% block head %}
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+
+    
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="stylesheets/main.css" />
+
+    <title>{% block title %}{% endblock title%} Google + Fashion 2014</title>
+    {% endblock head%}
+</head>
+<body>
+    <div id="content">
+        <div class="heading">
+            <h1>Google + Fashion 2014</h1>
+            <h2 class="collectionName">Collection Name</h2>
+        </div>
+        {% block content %}
+            <div class="middleSection">
+            </div>
+        {% endblock content%}
+        
+        <div class="navigation">
+            <a href=""><img src="http://continuumfashion.com/temp/rose/left-arrow.svg" alt="left arrow"> </a>
+
+            <div class="centered">
+                <span class="circle "></span>
+                <span class="circle "></span>
+                <span class="circle circle-active"></span>
+                <span class="circle "></span>
+                <span class="circle "></span>
+                <span class="circle "></span>
+            {% block pageTitle %}    
+            <h2></h2>
+            {% endblock %}
+            </div>
+
+            <a href=""><img src="http://continuumfashion.com/temp/rose/right-arrow.svg" alt="right arrow"> </a>
+        </div>
+
+    {% block leftColumn %}    
+    <div id="leftColumn" class="column">
+        {% block leftSidebar %}
+        {% endblock %}
+
+
+        <div id="footer">
+        {% block footer %}
+        Google | Privacy & Terms | Logout
+        {% endblock %}
+    </div>
+    </div>
+    {% endblock %}
+
+    {% block rightColumn %}  
+    <div id="rightColumn" class="column">
+        <div id="logo">
+            <img src="http://continuumfashion.com/temp/rose/rose-logo.svg" />
+        </div>
+
+        {% block rightSidebar %}
+        {% endblock %}
+    </div>
+    {% endblock %}
+
+
+    </div>
+   
+    {% block javascript %} 
+    {% endblock %} 
+
+
+</body>

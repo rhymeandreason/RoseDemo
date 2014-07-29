@@ -1,0 +1,25 @@
+application: rose-demo
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /images
+  static_dir: images
+
+- url: /(.*\.(gif|png|jpg))$
+  static_files: static/\1
+  upload: static/.*\.(gif|png|jpg)$ 
+
+- url: /.*
+  script: demo.application
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
