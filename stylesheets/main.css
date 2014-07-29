@@ -2,6 +2,10 @@
 	margin: 0px;
     padding: 0px;
 }
+img {
+	-webkit-transform: scale(1.25, 1.25);
+	-ms-transform: scale(1.25, 1.25);
+}
 
 html {
 	height: 100%;
@@ -28,7 +32,7 @@ h1, .Garamond {
 	font-family: Garamond, Georgia, serif;
 	text-transform: uppercase;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 16px;
 	letter-spacing: .2em;
 	padding-top: 30px;
 	padding-bottom:10px;
@@ -37,7 +41,7 @@ h2, .collectionName {
 	font-family: 'Karla', sans-serif;
 	text-transform: uppercase;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 16px;
 	letter-spacing: .2em;
 	padding-top:10px;
 	width: 200px;
@@ -96,7 +100,7 @@ h2, .collectionName {
 	color:white;
 	text-transform: uppercase;
 	font-weight: normal;
-	font-size: 10px;
+	font-size: 12px;
 	margin-bottom: 5px;
 }
 
@@ -107,7 +111,7 @@ h2, .collectionName {
 .garment {
 	text-align: center;
 	display: inline-block;
-	width: 66px;
+	width: 75px;
 	margin-left: 15px;
 	margin-top: 15px;
 }
@@ -115,17 +119,24 @@ h2, .collectionName {
 .thumbnail {
 	background-color: white;
 	text-align: center;
-	height: 66px;
-	width: 66px;
+	height: 75px;
+	width: 75px;
 	display: inline-block;
 	border: 2px solid white;
+	position: relative;
+}
+.thumbnail img {
+	-webkit-transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	width: 100%;
 }
 
 .garment-select {
 	border: 2px solid white;
-	width: 66px;
+	width: 75px;
 	display: inline-block;
-	margin-top: -1px;
+	position: relative;
+	top: -3px;
 }
 
 .garment-select:hover {
@@ -143,10 +154,10 @@ h2, .collectionName {
 }
 
 .circle {
-	width: 8px;
-	height: 8px;
+	width: 10px;
+	height: 10px;
 	border-radius: 50%;
-	border: 1.5px solid black;
+	border: 2px solid black;
 	margin: 5px;
 	display:inline-block;
 }
@@ -158,18 +169,19 @@ h2, .collectionName {
 
 .slider, .ui-slider, .ui-slider-horizontal, .ui-widget-content, .ui-widget-content{
 	width: 100%;
-	height: 1px; !important
+	height: 2px; !important
 	background: white;
 	border: none;
 	margin-top: 20px;
 }
 .ui-slider-horizontal .ui-slider-handle {
-	width:8px;
-	height: 8px;
+	width:12px;
+	height: 12px;
 	background: #8BD6A2;
 	border: none;
 	margin-left: -1px;
-	margin-top: 3px;
+	margin-top: 1px;
+	border-radius: 50%; !important
 }
 
 #logo {
