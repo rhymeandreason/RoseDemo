@@ -25,7 +25,7 @@ var bodyMaterial;
 var greyMaterial;
 
 var femaleDress, femaleShirt, femalePants, femaleCoat, femaleGown;
-var malePants, maleShirt, maleCollaredShirt, maleCoat, maleSleeveless;
+var malePants, maleShirt, maleCollarShirt, maleCoat, maleSleeveless;
 
 
 init();
