@@ -58,9 +58,24 @@ function init() {
 	directionalLight2.position.set(-70, 50, 100);
 	scene.add(directionalLight2);
 	
-	material1 = new THREE.MeshLambertMaterial( { color: 0x202020, morphTargets: true, side: THREE.DoubleSide} );
+	//material1 = new THREE.MeshLambertMaterial( { color: 0x202020, morphTargets: true, side: THREE.DoubleSide} );
 	
-	material3 = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, morphTargets: false, side: THREE.DoubleSide} );
+material1 = new THREE.MeshPhongMaterial( { 
+    color: 0x202020, 
+    ambient: 0x202020, // should generally match color
+    specular: 0x050505,
+    shininess: 100
+} ); 
+
+  material3 = new THREE.MeshPhongMaterial( { 
+    color: 0xC9C9C9, 
+    ambient: 0x996633, // should generally match color
+    specular: 0x050505,
+    shininess: 100
+} ); 
+
+
+	//material3 = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, morphTargets: false, side: THREE.DoubleSide} );
 	
 	material2 =  new THREE.MeshBasicMaterial({ color: 0xFFFFFF, morphTargets: true, shading: THREE.FlatShading, wireframe: true, wireframeLinewidth:1.5, opacity:0.3, transparent: true });
 
