@@ -2,9 +2,7 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
+  	<script src="javascripts/Three/three.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -58,27 +56,35 @@
 </div>
 {% endblock %}
 
+{% macro slider(labelEnglish, labelSpanish, morphnum) -%}
+	<div class="slider {{ morphnum }}"></div>
+	<h5 class="label english">{{ labelEnglish }}</h5>
+	<h5 class="label spanish">{{ labelSpanish }}</h5>
+{%- endmacro %}
+
 {% block rightSidebar %}
 <div class="rightSidebar">
-	<div class="slider"></div>
+	<div class="slider morph1"></div>
 	<h5 class="label english">Length</h5>
 	<h5 class="label spanish">Length</h5>
 
-	<div class="slider"></div>
+	<div class="slider morph2"></div>
 	<h5 class="label english">Sleeves</h5>
 	<h5 class="label spanish">Length</h5>
 
-	<div class="slider"></div>
+	<div class="slider morph3"></div>
 	<h5 class="label english">Boxiness</h5>
 	<h5 class="label spanish">Length</h5>
 
-	<div class="slider"></div>
+	<div class="slider morph4"></div>
 	<h5 class="label english">Neckline</h5>
 	<h5 class="label spanish">Length</h5>
 
-	<div class="slider"></div>
+	<div class="slider morph5"></div>
 	<h5 class="label english">Tightness</h5>
 	<h5 class="label spanish">Length</h5>
+
+	{{ slider('option 6', 'optionale6', 'morph6') }}
 
 </div>
 {% endblock %}
@@ -98,7 +104,17 @@ $(".active-garment").click(function(){
 });
 
 $(function() {
-    $( ".slider" ).slider();
-  });
+    $( ".slider" ).slider({
+    	min: 0,
+    	max: 100,
+    	slide: function (event, ui) {
+    		console.log($(this).slider("option", "value"));
+    	}
+    });
+    
+
+
+
+ });
 </script>
 {% endblock %} 
