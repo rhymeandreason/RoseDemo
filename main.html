@@ -219,6 +219,9 @@ $(".garment .thumbnail").mousedown(function(){
 	$(".garmentSliders").hide();
 	$("#"+currentGarment).show();
 	updateMorph();
+
+	$(".garment .thumbnail").removeClass("active-thumbnail");
+	$(this).addClass("active-thumbnail");
 });
 
 $(".garment .thumbnail").mouseup(function(){

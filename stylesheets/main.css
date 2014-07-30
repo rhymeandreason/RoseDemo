@@ -134,6 +134,16 @@ h2, .collectionName {
 	width: 100%;
 }
 
+.active-thumbnail {
+	background: url(/images/thumbnail-active.png);
+	background-color: black;
+	background-size: contain;
+}
+
+.active-thumbnail img{
+	opacity: 0;
+} 
+
 .garment-select {
 	border: 2px solid white;
 	width: 75px;
@@ -143,7 +153,7 @@ h2, .collectionName {
 }
 
 .garment-select:hover {
-
+	background-color: #8BD6A2;
 }
 
 .navigation {
