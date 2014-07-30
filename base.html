@@ -22,8 +22,8 @@
 <body>
     <div id="content">
         <div class="heading">
-            <h1>Google + Fashion 2014</h1>
-            <h2 class="collectionName">Collection Name</h2>
+            <h1 class="english">Google + Fashion 2014</h1>
+            <h2 class="collectionName english">Collection Name</h2>
         </div>
         {% block content %}
             <div class="middleSection">
@@ -75,9 +75,29 @@
 
 
     </div>
-   
+   <script>
+   var urlParams;
+    (window.onpopstate = function () {
+        var match,
+            pl     = /\+/g,  // Regex for replacing addition symbol with a space
+            search = /([^&=]+)=?([^&]*)/g,
+            decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+            query  = window.location.search.substring(1);
+
+        urlParams = {};
+        while (match = search.exec(query))
+           urlParams[decode(match[1])] = decode(match[2]);
+    })();
+
+    if (urlParams.language == "spanish") {
+        $(".english").hide();
+    } else {
+        $(".spanish").hide();
+    }
+    </script>
     {% block javascript %} 
     {% endblock %} 
+    
 
 
 </body>
