@@ -20,39 +20,39 @@
 {% block leftSidebar %}
 <div class="leftSidebar">
 	<div class="female">
+		<div class="garment" data-garment="femaleDress">
+			<h5 class="label english">Dress</h5>
+			<h5 class="label spanish">Dress</h5>
+			<a class="thumbnail" id="dress1"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
+
 		<div class="garment" data-garment="femaleShirt">
 			<h5 class="label english">Shirt</h5>
 			<h5 class="label spanish">Shirt</h5>
 			<a class="thumbnail" id="shirt" data-garment="femaleShirt"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 
 		<div class="garment" data-garment="femalePants">
 			<h5 class="label english">Pants</h5>
 			<h5 class="label spanish">Pants</h5>
 			<a class="thumbnail" id="pants"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
-		</div>
-
-		<div class="garment" data-garment="femaleDress">
-			<h5 class="label english">Dress</h5>
-			<h5 class="label spanish">Dress</h5>
-			<a class="thumbnail" id="dress1"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 
 		<div class="garment" data-garment="femaleGown">
 			<h5 class="label english">Gown</h5>
 			<h5 class="label spanish">Gown</h5>
 			<a class="thumbnail" id="dress2"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 
 		<div class="garment" data-garment="femaleCoat">
 			<h5 class="label english">Coat</h5>
 			<h5 class="label spanish">Coat</h5>
 			<a class="thumbnail" id="coat"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 	</div>
 
@@ -61,35 +61,35 @@
 			<h5 class="label english">Pants</h5>
 			<h5 class="label spanish">Pants</h5>
 			<a class="thumbnail" id="shirt"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 
 		<div class="garment" data-garment="maleShirt">
 			<h5 class="label english">Shirt</h5>
 			<h5 class="label spanish">Shirt</h5>
 			<a class="thumbnail" id="pants"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 
 		<div class="garment" data-garment="maleCollarShirt">
 			<h5 class="label english">Collared Shirt</h5>
 			<h5 class="label spanish">Shirt</h5>
 			<a class="thumbnail" id="dress1"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 
 		<div class="garment" data-garment="maleCoat">
 			<h5 class="label english">Coat</h5>
 			<h5 class="label spanish">Coat</h5>
 			<a class="thumbnail" id="dress2"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 
 		<div class="garment" data-garment="maleSleeveless">
 			<h5 class="label english">Sleeveless Shirt</h5>
 			<h5 class="label spanish">Shirt</h5>
 			<a class="thumbnail" id="coat"><img src="/images/thumbnail.svg" /></a>
-			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+			<a class="garment-select "><img class="marker inactive-garment" src="/images/xmark.svg" /></a>
 		</div>
 	</div>
 
@@ -105,27 +105,35 @@
 
 {% block rightSidebar %}
 <div class="rightSidebar">
-	<div class="slider morph1"></div>
-	<h5 class="label english">Length</h5>
-	<h5 class="label spanish">Length</h5>
+	<div class="garmentSliders" id="femaleDress">
+		<div class="slider morph1"></div>
+		<h5 class="label english">Fullness</h5>
+		<h5 class="label spanish">Length</h5>
 
-	<div class="slider morph2"></div>
-	<h5 class="label english">Sleeves</h5>
-	<h5 class="label spanish">Length</h5>
+		<div class="slider morph2"></div>
+		<h5 class="label english">Length</h5>
+		<h5 class="label spanish">Length</h5>
 
-	<div class="slider morph3"></div>
-	<h5 class="label english">Boxiness</h5>
-	<h5 class="label spanish">Length</h5>
+		<div class="slider morph3"></div>
+		<h5 class="label english">Neckline</h5>
+		<h5 class="label spanish">Length</h5>
 
-	<div class="slider morph4"></div>
-	<h5 class="label english">Neckline</h5>
-	<h5 class="label spanish">Length</h5>
+		<div class="slider morph4"></div>
+		<h5 class="label english">Boxiness</h5>
+		<h5 class="label spanish">Length</h5>
 
-	<div class="slider morph5"></div>
-	<h5 class="label english">Tightness</h5>
-	<h5 class="label spanish">Length</h5>
+		<div class="slider morph5"></div>
+		<h5 class="label english">Cap Sleeves</h5>
+		<h5 class="label spanish">Length</h5>
+	</div>
 
-	{{ slider('option 6', 'optionale6', 'morph6') }}
+	<div class="garmentSliders" id="femaleShirt">
+		{{ slider('Short Sleeves', 'optionale1', 'morph1') }}
+		{{ slider('Crop Top', 'optionale1', 'morph2') }}
+		{{ slider('Boxiness', 'optionale1', 'morph3') }}
+		{{ slider('Neckline', 'optionale1', 'morph4') }}
+		{{ slider('Assymmetric', 'optionale1', 'morph5') }}
+	</div>
 
 </div>
 {% endblock %}
@@ -136,14 +144,19 @@
 <script>
 var currentGarment = "femaleDress";
 
-$(".inactive-garment").click(function(){
-	$(this).attr("src", "/images/checkmark.svg");
-	$(this).attr("class", "active-garment");
-}); 
-
-$(".active-garment").click(function(){
-	$(this).attr("src", "/images/xmark.svg");
-	$(this).attr("class", "inactive-garment");
+$(".marker").click(function(){
+	//console.log($(this).child());
+	console.log($(this).hasClass("inactive-garment"));
+	if ($(this).hasClass("inactive-garment") == true) {
+		$(this).attr("src", "/images/checkmark.svg");
+		$(this).addClass("active-garment");
+		$(this).removeClass("inactive-garment");
+		
+	} else if ($(this).hasClass('active-garment') == true) {
+		$(this).attr("src", "/images/xmark.svg");
+		$(this).removeClass("active-garment");
+		$(this).addClass("inactive-garment");
+	}
 });
 
 $(".garment .thumbnail").click(function(){
@@ -153,6 +166,7 @@ $(".garment .thumbnail").click(function(){
 })
 
 $(function() {
+	/*
     $( ".slider" ).slider({
     	min: 0,
     	max: 100,
@@ -160,7 +174,61 @@ $(function() {
     		console.log($(this).slider("option", "value"));
     	}
     });
+	*/
 
+    $( ".morph1" ).slider({
+    	min: 0,
+    	max: 100,
+    	slide: function (event, ui) {
+    		var val = $(this).slider("option", "value");
+    		mesh.morphTargetInfluences[ 1 ] = val/100;
+    	}
+    });
+
+    $( ".morph2" ).slider({
+    	min: 0,
+    	max: 100,
+    	slide: function (event, ui) {
+    		var val = $(this).slider("option", "value");
+    		mesh.morphTargetInfluences[ 2 ] = val/100;
+    	}
+    });
+
+    $( ".morph3" ).slider({
+    	min: 0,
+    	max: 100,
+    	slide: function (event, ui) {
+    		var val = $(this).slider("option", "value");
+    		mesh.morphTargetInfluences[ 3 ] = val/100;
+    	}
+    });
+
+    $( ".morph4" ).slider({
+    	min: 0,
+    	max: 100,
+    	slide: function (event, ui) {
+    		var val = $(this).slider("option", "value");
+    		mesh.morphTargetInfluences[ 4 ] = val/100;
+    	}
+    });
+
+    $( ".morph5" ).slider({
+    	min: 0,
+    	max: 100,
+    	slide: function (event, ui) {
+    		var val = $(this).slider("option", "value");
+    		mesh.morphTargetInfluences[ 5 ] = val/100;
+    	}
+    });
+
+    $( ".morph6" ).slider({
+    	min: 0,
+    	max: 100,
+    	slide: function (event, ui) {
+    		var val = $(this).slider("option", "value");
+    		mesh.morphTargetInfluences[ 6 ] = val/100;
+    	}
+    });
 
  });
 </script>

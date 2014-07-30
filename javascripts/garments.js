@@ -64,7 +64,8 @@ material1 = new THREE.MeshPhongMaterial( {
     color: 0x202020, 
     ambient: 0x202020, // should generally match color
     specular: 0x050505,
-    shininess: 100
+    shininess: 100,
+    morphTargets: true
 } ); 
 
   material3 = new THREE.MeshPhongMaterial( { 
