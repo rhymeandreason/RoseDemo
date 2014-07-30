@@ -105,7 +105,7 @@
 
 {% block rightSidebar %}
 <div class="rightSidebar">
-	<div class="garmentSliders" id="femaleDress">
+	<div class="garmentSliders female" id="femaleDress">
 		<div class="slider morph1"></div>
 		<h5 class="label english">Fullness</h5>
 		<h5 class="label spanish">Length</h5>
@@ -149,6 +149,44 @@
 		{{ slider('Sleeve Width', 'optionale1', 'morph5') }}
 		{{ slider('Shoulders', 'optionale1', 'morph6') }}
 	</div>
+
+	<div class="garmentSliders" id="maleShirt" style="display:none;">
+		{{ slider('Length', 'optionale1', 'morph1') }}
+		{{ slider('Boxiness', 'optionale1', 'morph2') }}
+		{{ slider('Short Sleeves', 'optionale1', 'morph3') }}
+		{{ slider('Cowl', 'optionale1', 'morph4') }}
+	</div>
+
+	<div class="garmentSliders male" id="malePants" style="display:none;">
+		{{ slider('Tightness', 'optionale1', 'morph1') }}
+		{{ slider('Shorts', 'optionale1', 'morph2') }}
+		{{ slider('Width', 'optionale1', 'morph3') }}
+	</div>
+
+	<div class="garmentSliders" id="maleCoat" style="display:none;">
+		{{ slider('Length', 'optionale1', 'morph1') }}
+		{{ slider('Boxiness', 'optionale1', 'morph2') }}
+		{{ slider('Cuff Sleeves', 'optionale1', 'morph3') }}
+		{{ slider('Shoulders', 'optionale1', 'morph4') }}
+		{{ slider('Cowl', 'optionale1', 'morph5') }}
+		{{ slider('Collar', 'optionale1', 'morph6') }}
+	</div>
+
+	<div class="garmentSliders" id="maleCollaredShirt" style="display:none;">
+		{{ slider('Short Sleeves', 'optionale1', 'morph1') }}
+		{{ slider('Shirt Tails', 'optionale1', 'morph2') }}
+		{{ slider('Collar Points', 'optionale1', 'morph3') }}
+		{{ slider('Collar Size', 'optionale1', 'morph5') }}
+	</div>
+
+	<div class="garmentSliders" id="maleSleeveless" style="display:none;">
+		{{ slider('Length', 'optionale1', 'morph1') }}
+		{{ slider('Boxiness', 'optionale1', 'morph2') }}
+		{{ slider('Short Sleeves', 'optionale1', 'morph3') }}
+		{{ slider('Neckline', 'optionale1', 'morph5') }}
+	</div>
+
+
 
 </div>
 {% endblock %}
