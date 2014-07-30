@@ -186,6 +186,7 @@ $(".garment .thumbnail").mousedown(function(){
 $(".garment .thumbnail").mouseup(function(){
 	console.log('up');
 	updateMorph();
+	scene.add( mesh );
 });
 
 function updateMorph() {

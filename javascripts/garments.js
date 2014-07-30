@@ -24,6 +24,9 @@ var garmentMaterial;
 var bodyMaterial;
 var greyMaterial;
 
+var femaleDress, femaleShirt, femalePants, femaleCoat, femaleGown;
+var malePants, maleShirt, maleCollaredShirt, maleCoat, maleSleeveless;
+
 
 init();
 animate();
@@ -81,6 +84,15 @@ garmentMaterial = new THREE.MeshPhongMaterial( {
 	
 	greyMaterial =  new THREE.MeshBasicMaterial({ color: 0xFFFFFF, morphTargets: true, shading: THREE.FlatShading, wireframe: true, wireframeLinewidth:1.5, opacity:0.3, transparent: true });
 
+  var femaleURL = "/javascripts/female/";
+  var maleURL = "/javascripts/male/";
+
+  femaleDress = loadFile(femaleURL+"femaleDress.js");
+  femalePants = loadFile(femaleURL+"femalePants.js");
+  femaleShirt = loadFile(femaleURL+"femaleShirt.js");
+  femaleCoat = loadFile(femaleURL+"femaleCoat.js");
+
+
 
 	//var geometry = new THREE.CubeGeometry( 100, 100, 100 );
 	var loader = new THREE.JSONLoader( true );
@@ -103,13 +115,14 @@ garmentMaterial = new THREE.MeshPhongMaterial( {
 			//mesh.add( body );
     
 	} );
+
 	
 	var loader2 = new THREE.JSONLoader( true );
     var bodymesh = "/javascripts/female/female_default.js";
     if (gender == "male") {
         bodymesh = "/javascripts/male/male_model.js";
     } 
-    loader.load( bodymesh, function( geometry ) {
+    loader2.load( bodymesh, function( geometry ) {
 
 			body = new THREE.Mesh( geometry, bodyMaterial  );
 			
@@ -175,6 +188,22 @@ garmentMaterial = new THREE.MeshPhongMaterial( {
 
 }
 
+function loadFile(filename) {
+  var loader = new THREE.JSONLoader( true );
+  var obj;
+
+    loader.load( filename, function( geometry ) {
+
+      obj = new THREE.Mesh( geometry, garmentMaterial  );
+      
+      obj.scale.set( 9, 9, 9 );
+      obj.position.y = 20;
+
+  } );
+
+    return obj;
+}
+
 
 function animate() {
 
@@ -212,7 +241,7 @@ function changeGarment(filename) {
       mesh.position.y = 20;
       mesh.rotation.x = currRotX;
       mesh.rotation.y = currRotY;
-      scene.add( mesh );
+      
     
   } );
 }
