@@ -127,12 +127,27 @@
 		<h5 class="label spanish">Length</h5>
 	</div>
 
-	<div class="garmentSliders" id="femaleShirt">
+	<div class="garmentSliders" id="femaleShirt" style="display:none;">
 		{{ slider('Short Sleeves', 'optionale1', 'morph1') }}
 		{{ slider('Crop Top', 'optionale1', 'morph2') }}
 		{{ slider('Boxiness', 'optionale1', 'morph3') }}
 		{{ slider('Neckline', 'optionale1', 'morph4') }}
 		{{ slider('Assymmetric', 'optionale1', 'morph5') }}
+	</div>
+
+	<div class="garmentSliders" id="femalePants" style="display:none;">
+		{{ slider('Tightness', 'optionale1', 'morph1') }}
+		{{ slider('Shorts', 'optionale1', 'morph2') }}
+		{{ slider('Low-Rise', 'optionale1', 'morph3') }}
+	</div>
+
+	<div class="garmentSliders" id="femaleCoat" style="display:none;">
+		{{ slider('Fullness', 'optionale1', 'morph1') }}
+		{{ slider('Length', 'optionale1', 'morph2') }}
+		{{ slider('Neckline', 'optionale1', 'morph3') }}
+		{{ slider('Boxiness', 'optionale1', 'morph4') }}
+		{{ slider('Sleeve Width', 'optionale1', 'morph5') }}
+		{{ slider('Shoulders', 'optionale1', 'morph6') }}
 	</div>
 
 </div>
@@ -159,11 +174,30 @@ $(".marker").click(function(){
 	}
 });
 
-$(".garment .thumbnail").click(function(){
+$(".garment .thumbnail").mousedown(function(){
 	currentGarment = $(this).parent().attr('data-garment');
 	console.log(currentGarment);
 	changeGarment("/javascripts/"+gender+"/"+currentGarment+".js");
-})
+	$(".garmentSliders").hide();
+	$("#"+currentGarment).show();
+	updateMorph();
+});
+
+$(".garment .thumbnail").mouseup(function(){
+	console.log('up');
+	updateMorph();
+});
+
+function updateMorph() {
+	var i=0;
+	$("#"+currentGarment+ " .slider").each(function(){
+		i++;
+		//$(this).slider('option', 'slide')(null, {value: $(this).slider('value') });
+		//$(this).trigger('slide');
+		var val = $(this).slider("option", "value");
+		mesh.morphTargetInfluences[ i ] = val/100;
+	});
+}
 
 $(function() {
 	/*

@@ -20,9 +20,9 @@ var mousex = 0, mousey= 0, pmousex= 0, pmousey= 0, dx= 0, dy= 0;
 
 var yamt = 0, xamt = 0;
 
-var material1;
-var material3;
-var material2;
+var garmentMaterial;
+var bodyMaterial;
+var greyMaterial;
 
 
 init();
@@ -58,17 +58,18 @@ function init() {
 	directionalLight2.position.set(-70, 50, 100);
 	scene.add(directionalLight2);
 	
-	//material1 = new THREE.MeshLambertMaterial( { color: 0x202020, morphTargets: true, side: THREE.DoubleSide} );
+	//garmentMaterial = new THREE.MeshLambertMaterial( { color: 0x202020, morphTargets: true, side: THREE.DoubleSide} );
 	
-material1 = new THREE.MeshPhongMaterial( { 
+garmentMaterial = new THREE.MeshPhongMaterial( { 
     color: 0x202020, 
     ambient: 0x202020, // should generally match color
     specular: 0x050505,
     shininess: 100,
-    morphTargets: true
+    morphTargets: true,
+    side: THREE.DoubleSide
 } ); 
 
-  material3 = new THREE.MeshPhongMaterial( { 
+  bodyMaterial = new THREE.MeshPhongMaterial( { 
     color: 0xC9C9C9, 
     ambient: 0x996633, // should generally match color
     specular: 0x050505,
@@ -76,9 +77,9 @@ material1 = new THREE.MeshPhongMaterial( {
 } ); 
 
 
-	//material3 = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, morphTargets: false, side: THREE.DoubleSide} );
+	//bodyMaterial = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, morphTargets: false, side: THREE.DoubleSide} );
 	
-	material2 =  new THREE.MeshBasicMaterial({ color: 0xFFFFFF, morphTargets: true, shading: THREE.FlatShading, wireframe: true, wireframeLinewidth:1.5, opacity:0.3, transparent: true });
+	greyMaterial =  new THREE.MeshBasicMaterial({ color: 0xFFFFFF, morphTargets: true, shading: THREE.FlatShading, wireframe: true, wireframeLinewidth:1.5, opacity:0.3, transparent: true });
 
 
 	//var geometry = new THREE.CubeGeometry( 100, 100, 100 );
@@ -90,10 +91,10 @@ material1 = new THREE.MeshPhongMaterial( {
 
     loader.load( garmentMesh, function( geometry ) {
 
-			mesh = new THREE.Mesh( geometry, material1  );
+			mesh = new THREE.Mesh( geometry, garmentMaterial  );
 			// mesh = THREE.SceneUtils.createMultiMaterialObject( geometry, [
-      //    material1,
-      //    material2
+      //    garmentMaterial,
+      //    greyMaterial
       //]);
 			
 			mesh.scale.set( 9, 9, 9 );
@@ -110,7 +111,7 @@ material1 = new THREE.MeshPhongMaterial( {
     } 
     loader.load( bodymesh, function( geometry ) {
 
-			body = new THREE.Mesh( geometry, material3  );
+			body = new THREE.Mesh( geometry, bodyMaterial  );
 			
 			body.scale.set( 9, 9, 9 );
       body.position.y = 20;
@@ -205,7 +206,7 @@ function changeGarment(filename) {
 
     loader.load( filename, function( geometry ) {
 
-      mesh = new THREE.Mesh( geometry, material1  );
+      mesh = new THREE.Mesh( geometry, garmentMaterial  );
       
       mesh.scale.set( 9, 9, 9 );
       mesh.position.y = 20;

@@ -19,17 +19,7 @@
 	"materials" : [	{
 		"DbgColor" : 15658734,
 		"DbgIndex" : 0,
-		"DbgName" : "Default.002",
-		"blending" : "NormalBlending",
-		"colorAmbient" : [0.3027447984031557, 0.3027447984031557, 0.3027447984031557],
-		"colorDiffuse" : [0.3027447984031557, 0.3027447984031557, 0.3027447984031557],
-		"colorSpecular" : [0.16666699945926666, 0.16666699945926666, 0.16666699945926666],
-		"depthTest" : true,
-		"depthWrite" : true,
-		"shading" : "Lambert",
-		"specularCoef" : 1,
-		"transparency" : 1.0,
-		"transparent" : true,
+		"DbgName" : "undefined_dummy_0",
 		"vertexColors" : false
 	}],
 
