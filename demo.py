@@ -22,8 +22,15 @@ class MainPage(webapp2.RequestHandler):
 
         template = JINJA_ENVIRONMENT.get_template('main.html')
         self.response.write(template.render())
+    
+class MaterialsPage(webapp2.RequestHandler):
+    def get(self):
+
+        template = JINJA_ENVIRONMENT.get_template('materialView.html')
+        self.response.write(template.render())
 
 
 application = webapp2.WSGIApplication([
-    ('/', MainPage)
+    ('/', MainPage),
+    ('/materials', MaterialsPage)
 ], debug=True)
