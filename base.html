@@ -77,6 +77,7 @@
     </div>
    <script>
    var urlParams;
+   var gender = "female";
     (window.onpopstate = function () {
         var match,
             pl     = /\+/g,  // Regex for replacing addition symbol with a space
@@ -94,6 +95,10 @@
     } else {
         $(".spanish").hide();
     }
+    if (urlParams.gender == "male") {
+        gender = "male";
+    }
+
     </script>
     {% block javascript %} 
     {% endblock %} 

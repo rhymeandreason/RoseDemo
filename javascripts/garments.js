@@ -1,10 +1,11 @@
 var container, stats;
 
 var camera, scene, renderer;
+var width = $("#viewer").width();
+var height= $("#viewer").height();
 
 var geometry, objects;
 var material, meshOutline, shader1, shader2, light;
-
 
 
 var geometry, mesh, body;
@@ -32,12 +33,11 @@ mousePressed = false;
 
 function init() {
 
-	container = document.createElement( 'div' );
-	document.body.appendChild( container );
+	container = document.getElementById( 'viewer' );
 
 	scene = new THREE.Scene();
 
-	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 15000 );
+	camera = new THREE.PerspectiveCamera( 45, width / height, 1, 15000 );
 	camera.position.z = 200;
 	scene.add( camera );
 	
@@ -63,7 +63,12 @@ function init() {
 
 	//var geometry = new THREE.CubeGeometry( 100, 100, 100 );
 	var loader = new THREE.JSONLoader( true );
-    loader.load( "mens_coat.js", function( geometry ) {
+    var garmentMesh = "/javascripts/female/Dress4.js";
+    if (gender == "male") {
+        garmentMesh = "/javascripts/male/mens_pants2.js";
+    } 
+
+    loader.load( garmentMesh, function( geometry ) {
 
 			mesh = new THREE.Mesh( geometry, material1  );
 			// mesh = THREE.SceneUtils.createMultiMaterialObject( geometry, [
@@ -72,24 +77,30 @@ function init() {
       //]);
 			
 			mesh.scale.set( 9, 9, 9 );
+      mesh.position.y = 20;
 			scene.add( mesh );
 			//mesh.add( body );
     
 	} );
 	
 	var loader2 = new THREE.JSONLoader( true );
-    loader.load( "male_model.js", function( geometry ) {
+    var bodymesh = "/javascripts/female/female_default.js";
+    if (gender == "male") {
+        bodymesh = "/javascripts/male/male_model.js";
+    } 
+    loader.load( bodymesh, function( geometry ) {
 
 			body = new THREE.Mesh( geometry, material3  );
 			
 			body.scale.set( 9, 9, 9 );
+      body.position.y = 20;
 			scene.add(body);
     
 	} );
 	
-  renderer = new THREE.WebGLRenderer();
-	renderer.setClearColor( 0xf0f0f0 );
-	renderer.setSize( window.innerWidth, window.innerHeight );
+  renderer = new THREE.WebGLRenderer( {alpha: true});
+  renderer.setClearColor( 0x000000, 0 ); // the default
+	renderer.setSize( $("#viewer").width(), $("#viewer").height() );
 
 	renderer.sortObjects = false;
 	container.appendChild( renderer.domElement );

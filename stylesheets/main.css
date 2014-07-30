@@ -187,6 +187,10 @@ h2, .collectionName {
 	border-radius: 50%; !important
 }
 
+#viewer {
+	margin: auto auto;
+}
+
 #logo {
 	position: absolute;
 	right: 35px;

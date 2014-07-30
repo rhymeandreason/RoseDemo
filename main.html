@@ -3,11 +3,13 @@
 {% block head %}
     {{ super() }}
   	<script src="javascripts/Three/three.min.js"></script>
+  	<script src="javascripts/Three/js/libs/stats.min.js"></script>
 {% endblock %}
 
 {% block content %}
-    <div class="middleSection">
-    	3D viewer goes here
+    <div class="middleSection" id="middleSection">
+    	<div id="viewer" style="width:700px; height:750px">
+    	</div>
     </div>
 {% endblock %} 
 
@@ -111,10 +113,10 @@ $(function() {
     		console.log($(this).slider("option", "value"));
     	}
     });
-    
-
 
 
  });
 </script>
+
+<script src="javascripts/garments.js"></script>
 {% endblock %} 
