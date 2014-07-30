@@ -18,7 +18,11 @@ var mousex = 0, mousey= 0, pmousex= 0, pmousey= 0, dx= 0, dy= 0;
 	dx = getPositionLeft(document.getElementById("container")) - 5;
 	dy = getPositionTop(document.getElementById("container")) - 5;
 
-	var yamt = 0, xamt = 0;
+var yamt = 0, xamt = 0;
+
+var material1;
+var material3;
+var material2;
 
 
 init();
@@ -54,18 +58,18 @@ function init() {
 	directionalLight2.position.set(-70, 50, 100);
 	scene.add(directionalLight2);
 	
-	var material1 = new THREE.MeshLambertMaterial( { color: 0x202020, morphTargets: true, side: THREE.DoubleSide} );
+	material1 = new THREE.MeshLambertMaterial( { color: 0x202020, morphTargets: true, side: THREE.DoubleSide} );
 	
-	var material3 = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, morphTargets: false, side: THREE.DoubleSide} );
+	material3 = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, morphTargets: false, side: THREE.DoubleSide} );
 	
-	var material2 =  new THREE.MeshBasicMaterial({ color: 0xFFFFFF, morphTargets: true, shading: THREE.FlatShading, wireframe: true, wireframeLinewidth:1.5, opacity:0.3, transparent: true });
+	material2 =  new THREE.MeshBasicMaterial({ color: 0xFFFFFF, morphTargets: true, shading: THREE.FlatShading, wireframe: true, wireframeLinewidth:1.5, opacity:0.3, transparent: true });
 
 
 	//var geometry = new THREE.CubeGeometry( 100, 100, 100 );
 	var loader = new THREE.JSONLoader( true );
-    var garmentMesh = "/javascripts/female/Dress4.js";
+    var garmentMesh = "/javascripts/female/femaleDress.js";
     if (gender == "male") {
-        garmentMesh = "/javascripts/male/mens_pants2.js";
+        garmentMesh = "/javascripts/male/malePants.js";
     } 
 
     loader.load( garmentMesh, function( geometry ) {
@@ -175,6 +179,25 @@ function render() {
 
 	renderer.render( scene, camera );
 
+}
+
+function changeGarment(filename) {
+  var loader = new THREE.JSONLoader( true );
+  scene.remove(mesh);
+  var currRotX = mesh.rotation.x;
+  var currRotY = mesh.rotation.y;
+
+    loader.load( filename, function( geometry ) {
+
+      mesh = new THREE.Mesh( geometry, material1  );
+      
+      mesh.scale.set( 9, 9, 9 );
+      mesh.position.y = 20;
+      mesh.rotation.x = currRotX;
+      mesh.rotation.y = currRotY;
+      scene.add( mesh );
+    
+  } );
 }
 
 function getPositionLeft(This) {

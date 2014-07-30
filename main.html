@@ -19,39 +19,78 @@
 
 {% block leftSidebar %}
 <div class="leftSidebar">
-	<div class="garment">
-		<h5 class="label english">Shirt</h5>
-		<h5 class="label spanish">Shirt</h5>
-		<a class="thumbnail" id="shirt"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
-		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
+	<div class="female">
+		<div class="garment" data-garment="femaleShirt">
+			<h5 class="label english">Shirt</h5>
+			<h5 class="label spanish">Shirt</h5>
+			<a class="thumbnail" id="shirt" data-garment="femaleShirt"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
+
+		<div class="garment" data-garment="femalePants">
+			<h5 class="label english">Pants</h5>
+			<h5 class="label spanish">Pants</h5>
+			<a class="thumbnail" id="pants"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
+
+		<div class="garment" data-garment="femaleDress">
+			<h5 class="label english">Dress</h5>
+			<h5 class="label spanish">Dress</h5>
+			<a class="thumbnail" id="dress1"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
+
+		<div class="garment" data-garment="femaleGown">
+			<h5 class="label english">Gown</h5>
+			<h5 class="label spanish">Gown</h5>
+			<a class="thumbnail" id="dress2"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
+
+		<div class="garment" data-garment="femaleCoat">
+			<h5 class="label english">Coat</h5>
+			<h5 class="label spanish">Coat</h5>
+			<a class="thumbnail" id="coat"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
 	</div>
 
-	<div class="garment">
-		<h5 class="label english">Pants</h5>
-		<h5 class="label spanish">Pants</h5>
-		<a class="thumbnail" id="pants"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
-		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
-	</div>
+	<div class="male" style="display:none;">
+		<div class="garment" data-garment="malePants">
+			<h5 class="label english">Pants</h5>
+			<h5 class="label spanish">Pants</h5>
+			<a class="thumbnail" id="shirt"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
 
-	<div class="garment">
-		<h5 class="label english">Dress</h5>
-		<h5 class="label spanish">Dress</h5>
-		<a class="thumbnail" id="dress1"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
-		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
-	</div>
+		<div class="garment" data-garment="maleShirt">
+			<h5 class="label english">Shirt</h5>
+			<h5 class="label spanish">Shirt</h5>
+			<a class="thumbnail" id="pants"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
 
-	<div class="garment">
-		<h5 class="label english">Gown</h5>
-		<h5 class="label spanish">Gown</h5>
-		<a class="thumbnail" id="dress2"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
-		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
-	</div>
+		<div class="garment" data-garment="maleCollarShirt">
+			<h5 class="label english">Collared Shirt</h5>
+			<h5 class="label spanish">Shirt</h5>
+			<a class="thumbnail" id="dress1"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
 
-	<div class="garment">
-		<h5 class="label english">Coat</h5>
-		<h5 class="label spanish">Coat</h5>
-		<a class="thumbnail" id="coat"><img src="http://continuumfashion.com/temp/rose/thumbnail.svg" /></a>
-		<a class="garment-select "><img class="inactive-garment" src="http://continuumfashion.com/temp/rose/xmark.svg" /></a>
+		<div class="garment" data-garment="maleCoat">
+			<h5 class="label english">Coat</h5>
+			<h5 class="label spanish">Coat</h5>
+			<a class="thumbnail" id="dress2"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
+
+		<div class="garment" data-garment="maleSleeveless">
+			<h5 class="label english">Sleeveless Shirt</h5>
+			<h5 class="label spanish">Shirt</h5>
+			<a class="thumbnail" id="coat"><img src="/images/thumbnail.svg" /></a>
+			<a class="garment-select "><img class="inactive-garment" src="/images/xmark.svg" /></a>
+		</div>
 	</div>
 
 
@@ -95,15 +134,23 @@
 {% block javascript %} 
 
 <script>
+var currentGarment = "femaleDress";
+
 $(".inactive-garment").click(function(){
-	$(this).attr("src", "http://continuumfashion.com/temp/rose/checkmark.svg");
+	$(this).attr("src", "/images/checkmark.svg");
 	$(this).attr("class", "active-garment");
 }); 
 
 $(".active-garment").click(function(){
-	$(this).attr("src", "http://continuumfashion.com/temp/rose/xmark.svg");
+	$(this).attr("src", "/images/xmark.svg");
 	$(this).attr("class", "inactive-garment");
 });
+
+$(".garment .thumbnail").click(function(){
+	currentGarment = $(this).parent().attr('data-garment');
+	console.log(currentGarment);
+	changeGarment("/javascripts/"+gender+"/"+currentGarment+".js");
+})
 
 $(function() {
     $( ".slider" ).slider({
