@@ -38,6 +38,7 @@ class MaterialsPage(webapp2.RequestHandler):
 
 application = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/garments', MainPage),
     ('/materials', MaterialsPage),
     ('/shapes', ShapesPage)
 ], debug=True)
