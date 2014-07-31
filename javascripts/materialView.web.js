@@ -40,7 +40,7 @@ function makeView() {
       });
       this.mesh = new Mesh(g, this.material);
 
-      this.camera = new PerspectiveCamera(60, this.width / this.height);
+      this.camera = new PerspectiveCamera(45, this.width / this.height);
       this.camera.setPosition(new Vec3(0, 0, 2))
       this.arcball = new Arcball(this, this.camera);
       this.arcball.allowZooming = false;
