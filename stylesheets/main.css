@@ -256,6 +256,10 @@ select {
 	display: inline-block;
 }
 
+*:focus {
+    outline: none;
+}
+
 #logo {
 	position: absolute;
 	right: 35px;
