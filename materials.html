@@ -3,6 +3,8 @@
 {% block head %}
     {{ super() }}
     <script src="/javascripts/materialView.web.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.wheelcolorpicker.js"></script>
+    <link type="text/css" rel="stylesheet" href="stylesheets/wheelcolorpicker.css" />
     <style>
     .column {
       background-color: transparent;
@@ -59,6 +61,7 @@
           <canvas width="256" height="256" id="matView1"></canvas>
           <div class="colorBox">
             <span class="label english black">Color</span>
+            <input id="color1" type="text" value="#FF0000"></input>
           </div>
 
           <div class="materialSelect"> 
@@ -140,6 +143,16 @@
   matView3.setMaterial("glossy");
   matView3.setColor("#44DDFF");
   matView3.setBGColor("#FFFFFF");
+
+  $('#color1').wheelColorPicker({
+    layout: 'block',
+    format: 'css',
+    preview: false,
+    sliders: 'v'
+  });
+  $('#color1').on('sliderup', function() {
+    matView1.setColor($(this).val());
+  });
 
   $("#material1 .Rarrow").click(function(){
     if ($("#materialSelect1").prop('selectedIndex') == 2) {
