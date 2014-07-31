@@ -203,8 +203,57 @@ h2, .collectionName {
 	border-radius: 50%; !important
 }
 
+.button {
+	padding: 10px;
+	text-align: center;
+	background-color: #DFEBED;
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 15px auto;
+	width: 60%;
+	font-size: 16px;
+}
+
 #viewer {
 	margin: auto auto;
+	cursor: pointer;
+}
+canvas {
+      cursor: pointer;
+    }
+
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: 0;
+	text-transform: uppercase;
+	font-family: 'Karla', Verdana, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	color: #8BD6A2;
+	padding-left: 39%;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	width: 100%;
+	background: white;
+}
+
+.arrows {
+	border: 3px solid white;
+	padding: 6px;
+	height: 16px;
+}
+
+.Larrow {
+	float: left;
+	display:inline-block;
+}
+.Rarrow {
+	float: right;
+	display: inline-block;
 }
 
 #logo {
@@ -218,7 +267,8 @@ h2, .collectionName {
 	position: absolute;
 	bottom: 20px;
 	left: 30px;
-	font-size: 10px;
+	font-size: 11px;
 	font-weight: bold;
+	width: 200px;
 }
 

@@ -45,7 +45,13 @@
             {% endblock %}
             </div>
 
-            <a href=""><img src="http://continuumfashion.com/temp/rose/right-arrow.svg" alt="right arrow"> </a>
+            {% block nextLink %} 
+            <a href="" id="nextLink">
+                <img src="http://continuumfashion.com/temp/rose/right-arrow.svg" alt="right arrow"> 
+            </a>
+            {% endblock %}
+                
+            
         </div>
 
     {% block leftColumn %}    
@@ -58,7 +64,7 @@
         {% block footer %}
         Google | Privacy & Terms | Logout
         {% endblock %}
-    </div>
+        </div>
     </div>
     {% endblock %}
 
@@ -78,6 +84,7 @@
    <script>
    var urlParams;
    var gender = "female";
+   var language = "english";
     (window.onpopstate = function () {
         var match,
             pl     = /\+/g,  // Regex for replacing addition symbol with a space
@@ -92,6 +99,7 @@
 
     if (urlParams.language == "spanish") {
         $(".english").hide();
+        language = "spanish";
     } else {
         $(".spanish").hide();
     }

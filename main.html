@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Garments{% endblock %}
 {% block head %}
     {{ super() }}
   	<script src="javascripts/Three/three.min.js"></script>
@@ -242,6 +242,7 @@ function updateMorph() {
 }
 
 $(function() {
+	$("#nextLink").attr("href", "/shapes?language="+language+"?gender="+gender) ;
 	/*
     $( ".slider" ).slider({
     	min: 0,

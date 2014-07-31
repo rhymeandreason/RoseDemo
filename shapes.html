@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Embellish{% endblock %}
+{% block head %}
+    {{ super() }}
+  	<script src="javascripts/Three/three.min.js"></script>
+  	<script src="javascripts/Three/js/libs/stats.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="middleSection" id="middleSection">
+    	<div id="viewer" style="width:700px; height:750px">
+    	</div>
+    </div>
+{% endblock %} 
+
+{% block pageTitle %}    
+    <h2 class="english"> Embellishment</h2>
+{% endblock %}
+
+
+{% block leftSidebar %}
+{% endblock %}
+
+{% block rightSidebar %}
+<div class="rightSidebar">
+	<div class="shapeSelect">
+		<h5 class="label english">Select Shape</h5>
+		<h5 class="label spanish">Length</h5>
+	</div>
+
+
+	<div class="slider"></div>
+	<h5 class="label english">Size</h5>
+	<h5 class="label spanish">Length</h5>
+
+	<a class="button blue-button"> 
+		<span class="english">Undo</span><span class="spanish">Undo</span>
+	</a>
+	<a class="button blue-button"> 
+		<span class="english">Clear</span><span class="spanish">Clear</span>
+	</a>
+</div>
+
+{% endblock %}
+
+
+
+{% block javascript %} 
+<script>
+
+$("#nextLink").attr("href", "/materials?language="+language+"?gender="+gender) ;
+
+$( ".slider" ).slider({
+	min: 0,
+	max: 100,
+	slide: function (event, ui) {
+		console.log($(this).slider("option", "value"));
+	}
+});
+
+</script>
+
+<script src="javascripts/garments.js"></script>
+
+{% endblock %}
+
