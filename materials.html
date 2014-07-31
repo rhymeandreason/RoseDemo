@@ -84,6 +84,8 @@
           <div class="colorBox">
             <span class="label english black inactive">Color</span>
             <span class="label english black">Image</span>
+            <div id="colorSelect2"><input id="color2" type="text" value="#44FF77"></input></div>
+
           </div>
 
           <div class="materialSelect"> 
@@ -103,6 +105,12 @@
 
         <div class="material" id="material3"> 
           <canvas width="256" height="256" id="matView3"></canvas>
+          <div class="colorBox">
+            <span class="label english black inactive">Color</span>
+            <span class="label english black">Image</span>
+            <div id="colorSelect3"><input id="color3" type="text" value="#44DDFF"></input></div>
+
+          </div>
 
           <div class="materialSelect"> 
             <select id="materialSelect3">
@@ -152,6 +160,26 @@
   });
   $('#color1').on('sliderup', function() {
     matView1.setColor($(this).val());
+  });
+
+  $('#color2').wheelColorPicker({
+    layout: 'block',
+    format: 'css',
+    preview: false,
+    sliders: 'v'
+  });
+  $('#color2').on('sliderup', function() {
+    matView2.setColor($(this).val());
+  });
+
+  $('#color3').wheelColorPicker({
+    layout: 'block',
+    format: 'css',
+    preview: false,
+    sliders: 'v'
+  });
+  $('#color3').on('sliderup', function() {
+    matView3.setColor($(this).val());
   });
 
   $("#material1 .Rarrow").click(function(){
