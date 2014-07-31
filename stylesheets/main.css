@@ -231,7 +231,7 @@ select {
 	text-transform: uppercase;
 	font-family: 'Karla', Verdana, Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 17px;
 	text-align: center;
 	color: #8BD6A2;
 	padding-left: 39%;
@@ -242,7 +242,7 @@ select {
 }
 
 .arrows {
-	border: 3px solid white;
+	//border: 3px solid white;
 	padding: 6px;
 	height: 16px;
 }
