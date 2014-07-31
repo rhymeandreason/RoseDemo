@@ -17,10 +17,10 @@
       height: 700px;
     }
     .material{
-      width: 25%;
+      width: 22%;
       position:relative;
       float:left;
-      margin: 40px;
+      margin: 0px 50px;
     }
     .colorBox {
       width: 100%;
@@ -32,7 +32,7 @@
     .colorBox .label {
       padding: 9px;
       display:inline-block;
-      width: 42%;
+      width: 40%;
     }
     .colorBox .inactive {
       background-color: #F6F7F4;
@@ -63,7 +63,7 @@
 {% block content %}
     <div class="middleSection">
         <div class="material" id="material1">     
-          <canvas width="256" height="256" id="matView1"></canvas>
+          <canvas width="225" height="256" id="matView1"></canvas>
           <div class="colorBox">
             <span class="label english black">Color</span>
             <input id="color1" type="text" value="#FF0000"></input>
@@ -85,7 +85,7 @@
         </div>  
 
         <div class="material" id="material2"> 
-          <canvas width="256" height="256" id="matView2"></canvas>
+          <canvas width="225" height="256" id="matView2"></canvas>
           <div class="colorBox">
             <span class="label english black">Color</span>
             <span class="label english black inactive">Image</span>
@@ -109,7 +109,7 @@
         </div>  
 
         <div class="material" id="material3"> 
-          <canvas width="256" height="256" id="matView3"></canvas>
+          <canvas width="225" height="256" id="matView3"></canvas>
           <div class="colorBox">
             <span class="label english black inactive">Color</span>
             <span class="label english black">Image</span>
