@@ -14,6 +14,15 @@ handlers:
 - url: /images
   static_dir: images
 
+- url: /svg
+  static_dir: svg
+  mime_type: image/svg+xml
+
+- url: /(.*\.svg)
+  static_files: svg/\1
+  upload: svg/(.*\.svg)
+  mime_type: image/svg+xml
+
 - url: /(.*\.(gif|png|jpg))$
   static_files: static/\1
   upload: static/.*\.(gif|png|jpg)$ 
