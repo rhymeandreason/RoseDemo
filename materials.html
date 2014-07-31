@@ -53,14 +53,44 @@
              <a class="Larrow"> <img  src="/images/Larrow.svg"/></a>
              <a class="Rarrow"> <img  src="/images/Rarrow.svg"/></a>
             </div>
-
           </div>
+
         </div>  
+
         <div class="material" id="material2"> 
           <canvas width="256" height="256" id="matView2"></canvas>
+
+          <div class="materialSelect"> 
+            <select id="materialSelect2">
+              <option value="flat">Flat</option>
+              <option value ="matte" selected>Matte</option>
+              <option value ="glossy">Glossy</option>
+            </select>
+
+            <div class="arrows">
+             <a class="Larrow"> <img  src="/images/Larrow.svg"/></a>
+             <a class="Rarrow"> <img  src="/images/Rarrow.svg"/></a>
+            </div>
+          </div>
+
         </div>  
+
         <div class="material" id="material3"> 
           <canvas width="256" height="256" id="matView3"></canvas>
+
+          <div class="materialSelect"> 
+            <select id="materialSelect3">
+              <option value="flat">Flat</option>
+              <option value ="matte">Matte</option>
+              <option value ="glossy" selected>Glossy</option>
+            </select>
+
+            <div class="arrows">
+             <a class="Larrow"> <img  src="/images/Larrow.svg"/></a>
+             <a class="Rarrow"> <img  src="/images/Rarrow.svg"/></a>
+            </div>
+          </div>
+
         </div>
     </div>
 {% endblock %} 
@@ -88,24 +118,55 @@
   matView3.setColor("#44DDFF");
   matView3.setBGColor("#FFFFFF");
 
- // matView1.setMaterial("matte");
- // matView1.setColor("#44FF77");
- // matView1.setImage("assets/textures/pattern_4.jpg");
-
   $("#material1 .Rarrow").click(function(){
     if ($("#materialSelect1").prop('selectedIndex') == 2) {
       $("#materialSelect1").prop('selectedIndex', 0)
     } else {
       $("#materialSelect1 option:selected").next().prop('selected', true);
     }
+    matView1.setMaterial($("#materialSelect1 option:selected").val());
   });
-
   $("#material1 .Larrow").click(function(){
     if ($("#materialSelect1").prop('selectedIndex') == 0) {
       $("#materialSelect1").prop('selectedIndex', 2)
     } else {
       $("#materialSelect1 option:selected").prev().prop('selected', true);
     }
+    matView1.setMaterial($("#materialSelect1 option:selected").val());
+  });
+
+  $("#material2 .Rarrow").click(function(){
+    if ($("#materialSelect2").prop('selectedIndex') == 2) {
+      $("#materialSelect2").prop('selectedIndex', 0)
+    } else {
+      $("#materialSelect2 option:selected").next().prop('selected', true);
+    }
+    matView2.setMaterial($("#materialSelect2 option:selected").val());
+  });
+  $("#material2 .Larrow").click(function(){
+    if ($("#materialSelect2").prop('selectedIndex') == 0) {
+      $("#materialSelect2").prop('selectedIndex', 2)
+    } else {
+      $("#materialSelect2 option:selected").prev().prop('selected', true);
+    }
+    matView2.setMaterial($("#materialSelect2 option:selected").val());
+  });
+
+  $("#material3 .Rarrow").click(function(){
+    if ($("#materialSelect3").prop('selectedIndex') == 2) {
+      $("#materialSelect3").prop('selectedIndex', 0)
+    } else {
+      $("#materialSelect3 option:selected").next().prop('selected', true);
+    }
+    matView3.setMaterial($("#materialSelect3 option:selected").val());
+  });
+  $("#material3 .Larrow").click(function(){
+    if ($("#materialSelect3").prop('selectedIndex') == 0) {
+      $("#materialSelect3").prop('selectedIndex', 2)
+    } else {
+      $("#materialSelect3 option:selected").prev().prop('selected', true);
+    }
+    matView3.setMaterial($("#materialSelect3 option:selected").val());
   });
 
   </script>
